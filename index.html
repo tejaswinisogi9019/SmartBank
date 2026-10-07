@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBank - Smart Banking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🏦 SmartBank
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#dsa">C & DSA</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="login-btn">Login</button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">SMART BANKING SYSTEM</p>
+
+            <h1>
+                Banking Made
+                <span>Smart & Simple</span>
+            </h1>
+
+            <p>
+                A college project demonstrating modern banking
+                operations using C programming and Data Structures.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="showMessage()">
+                    Get Started
+                </button>
+
+                <a href="#dsa">
+                    Explore C & DSA
+                </a>
+            </div>
+
+        </div>
+
+        <div class="bank-card">
+
+            <div class="card-top">
+                <span>SmartBank</span>
+                <span>💳</span>
+            </div>
+
+            <div class="card-number">
+                4521  ****  ****  7824
+            </div>
+
+            <div class="card-bottom">
+                <div>
+                    <small>CARD HOLDER</small>
+                    <p>TEJASWINI</p>
+                </div>
+
+                <div>
+                    <small>VALID THRU</small>
+                    <p>12/30</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="section">
+
+        <div class="section-title">
+            <p>SMART BANKING</p>
+            <h2>Banking Services</h2>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="icon">👤</div>
+                <h3>Create Account</h3>
+                <p>
+                    Create and manage customer bank accounts.
+                </p>
+                <button onclick="openCreateAccount()">
+    Create Account
+</button>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🔍</div>
+                <h3>Search Account</h3>
+                <p>
+                    Quickly find customer account information.
+                </p>
+                 <button onclick="openSearchAccount()">
+    Search
+</button>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">💰</div>
+                <h3>Deposit Money</h3>
+                <p>
+                    Deposit money and update account balance.
+                </p>
+                <button onclick="openDeposit()">
+    Deposit Money
+</button>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">💸</div>
+                <h3>Withdraw Money</h3>
+                <p>
+                    Withdraw money with balance validation.
+                </p>
+                
+<button onclick="openWithdraw()">
+    Withdraw Money
+</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- C and DSA -->
+    <!-- BANKING OPERATIONS -->
+
+<section id="banking" class="section banking-section">
+
+    <div class="section-title">
+        <p>ACCOUNT MANAGEMENT</p>
+        <h2>SmartBank Operations</h2>
+    </div>
+    <!-- CHECK BALANCE -->
+
+<div id="balancePanel" class="operation-panel">
+
+    <h3>💳 Check Balance</h3>
+
+    <input
+        type="number"
+        id="balanceAccountNumber"
+        placeholder="Enter Account Number"
+    >
+
+    <button onclick="checkBalance()">
+        Check Balance
+    </button>
+
+    <div id="balanceResult"></div>
+
+</div>
+
+    <!-- Create Account -->
+
+    <div id="createAccountPanel" class="operation-panel">
+
+        <h3>Create New Account</h3>
+
+        <input
+            type="number"
+            id="accountNumber"
+            placeholder="Account Number"
+        >
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Customer Name"
+        >
+
+        <select id="accountType">
+            <option value="Savings">Savings</option>
+            <option value="Current">Current</option>
+        </select>
+
+        <input
+            type="number"
+            id="initialBalance"
+            placeholder="Initial Balance"
+        >
+
+        <button onclick="createAccount()">
+            Create Account
+        </button>
+
+        <p id="createResult"></p>
+
+    </div>
+
+
+    <!-- Search Account -->
+
+    <div id="searchAccountPanel" class="operation-panel">
+
+        <h3>Search Account</h3>
+
+        <input
+            type="number"
+            id="searchNumber"
+            placeholder="Enter Account Number"
+        >
+
+        <button onclick="searchAccount()">
+            Search Account
+        </button>
+
+        <div id="searchResult"></div>
+
+    </div>
+    <!-- DEPOSIT MONEY -->
+
+<div id="depositPanel" class="operation-panel">
+
+    <h3>💰 Deposit Money</h3>
+
+    <input
+        type="number"
+        id="depositAccountNumber"
+        placeholder="Enter Account Number"
+    >
+
+    <input
+        type="number"
+        id="depositAmount"
+        placeholder="Enter Deposit Amount"
+    >
+
+    <button onclick="depositMoney()">
+        Deposit Money
+    </button>
+
+    <p id="depositResult"></p>
+
+</div>
+
+
+<!-- WITHDRAW MONEY -->
+
+<div id="withdrawPanel" class="operation-panel">
+
+    <h3>💸 Withdraw Money</h3>
+
+    <input
+        type="number"
+        id="withdrawAccountNumber"
+        placeholder="Enter Account Number"
+    >
+
+    <input
+        type="number"
+        id="withdrawAmount"
+        placeholder="Enter Withdrawal Amount"
+    >
+
+    <button onclick="withdrawMoney()">
+        Withdraw Money
+    </button>
+
+    <p id="withdrawResult"></p>
+
+</div>
+
+</section>
+
+
+    <!-- Project Flow -->
+    <section class="section">
+
+        <div class="section-title">
+            <p>HOW IT WORKS</p>
+            <h2>SmartBank System Flow</h2>
+        </div>
+
+        <div class="flow">
+
+            <div class="flow-item">
+                <div>1</div>
+                <h3>Create Account</h3>
+                <p>Customer information is stored using structures.</p>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item">
+                <div>2</div>
+                <h3>Search</h3>
+                <p>Linear search finds the required account.</p>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item">
+                <div>3</div>
+                <h3>Transaction</h3>
+                <p>Deposit and withdrawal update the balance.</p>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item">
+                <div>4</div>
+                <h3>Data Structures</h3>
+                <p>Stack and queue manage banking operations.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <div>
+            <p class="small-title">COLLEGE PROJECT</p>
+
+            <h2>
+                SmartBank – Smart Banking System
+            </h2>
+
+            <p>
+                SmartBank is an educational banking management
+                system designed to demonstrate C programming,
+                Data Structures and modern web technologies.
+            </p>
+        </div>
+
+        <div class="tech-box">
+            <h3>Technologies</h3>
+
+            <p>✓ C Programming</p>
+            <p>✓ Data Structures</p>
+            <p>✓ HTML5</p>
+            <p>✓ CSS3</p>
+            <p>✓ JavaScript</p>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <h3>🏦 SmartBank</h3>
+
+        <p>
+            Smart Banking System | C Programming & DSA Project
+        </p>
+
+        <p>
+            © 2026 SmartBank
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
